@@ -3,107 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>My Media Hub</title>
-    
-    <!-- Add a favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
-    <!-- Link a Google Font (Poppins used here) -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGkgzimjvaS9GOz-U7mB1GC1-dOOiH9YJ3lG1OWy79DV_x6CSvHP8oHGkP&s=10" width="25">
+
+    <!-- Apply Google Font to main heading -->
     <style>
-        /* Apply Google Font to the main heading and structure the layout */
         h1 {
             font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            color: #333;
-            text-align: center;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .media-container {
-            margin-bottom: 40px;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        iframe, embed, object {
-            width: 100%;
-            border: none;
-            border-radius: 4px;
-        }
-        video {
-            width: 100%;
-            max-width: 600px;
-            display: block;
-        }
-        audio {
-            width: 100%;
-            max-width: 400px;
         }
     </style>
 </head>
+
 <body>
 
     <header>
         <h1>My Media Hub</h1>
+
+        <nav>
+            <a href="https://youtu.be/GrlAInfP990?si=v9XyK6hc92wMbREI">YouTube Video</a> |
+            <a href="#local-video">Local Video</a> |
+            <a href="https://audiomack.com/devsaolcom/song/kheladi">Audio</a> |
+            <a href="#map">Map</a> |
+            <a href="#webpage">Webpage</a> |
+            <a href="#pdf">PDF</a>
+        </nav>
     </header>
 
     <main>
-        <!-- 1. YouTube Video via iframe -->
-        <section class="media-container">
-            <h2>1. Embedded YouTube Video</h2>
-            <iframe width="560" height="315" src="https://youtube.com" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <section id="video">
+            <h2>YouTube Video</h2>
+
+            <iframe
+                width="560"
+                height="315"
+                src="https://youtu.be/GrlAInfP990?si=CpBQRCQfB5s7mjLB"
+                title="YouTube video"
+                alt="Sajjan raj vaidya song."
+                allowfullscreen>
+            </iframe>
         </section>
 
-        <!-- 2. Local Video with 2 source fallbacks -->
-        <section class="media-container">
-            <h2>2. Local Video Player</h2>
-            <video controls>
-                <source src="videos/sample.mp4" type="video/mp4">
-                <source src="videos/sample.webm" type="video/webm">
+        <hr>
+
+        <section id="local-video">
+            <h2>Local Video</h2>
+
+            <video width="600" controls>
+                <source src="my-video.mp4" type="mp4">
+                <source src="my-video.webm" type="video">
                 Your browser does not support the video tag.
             </video>
         </section>
 
-        <!-- 3. Audio Clip with controls -->
-        <section class="media-container">
-            <h2>3. Audio Clip Player</h2>
+        <hr>
+
+        <section id="audio">
+            <h2>Audio Clip</h2>
+
             <audio controls>
-                <source src="audio/music.mp3" type="audio/mpeg">
-                <source src="audio/music.ogg" type="audio/ogg">
-                Your browser does not support the audio element.
+                <source src="https://audiomack.com/devsaolcom/song/kheladi" type="audio/mpeg">
+                <!--Your browser does not support the audio element.-->
             </audio>
         </section>
 
-        <!-- 4. Google Map Location (PCPS College, Kupondole) -->
-        <section class="media-container">
-            <h2>4. Google Map Location</h2>
-            <iframe src="https://google.com" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <hr>
+
+        <section id="map">
+            <h2>Google Map</h2>
+
+            <iframe
+                src="https://www.google.com/maps?q=PCPS%20College%20Kupondole%20Nepal&output=embed"
+                width="500"
+                height="450"
+                title="PCPS College Location">
+            </iframe>
         </section>
 
-        <!-- 5. External Webpage via iframe -->
-        <section class="media-container">
-            <h2>5. External Webpage</h2>
-            <iframe src="https://example.com" height="400"></iframe>
+        <hr>
+
+        <section id="webpage">
+            <h2>External Webpage</h2>
+
+            <iframe
+                src="https://en.wikipedia.org/wiki/Web_page"
+                alt="Wikipedia"
+                width="800"
+                height="500"
+                title="External webpage">
+            </iframe>
         </section>
 
-        <!-- 6. PDF Document via object/embed -->
-        <section class="media-container">
-            <h2>6. Embedded PDF Document</h2>
-            <object data="documents/sample.pdf" type="application/pdf" width="100%" height="500px">
-                <p>Alternative text: Your browser doesn't support embedded PDFs. <a href="documents/sample.pdf">Click here to download the PDF.</a></p>
-            </object>
+        <hr>
+
+        <section id="pdf">
+            <h2>PDF Document</h2>
+
+            <embed
+                src="c:\Users\DELL\Downloads\CIS020-1-CIS093-1_Programming_Lab2 - Tagged.pdf"
+                type="pdf"
+                width="800"
+                height="600">
         </section>
+
     </main>
+
+    <footer>
+        <p>&copy; 2026 My Media Hub</p>
+    </footer>
 
 </body>
 </html>
